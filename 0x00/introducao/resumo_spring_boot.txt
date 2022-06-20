@@ -1,0 +1,32 @@
+
+
+O que é Spring Boot Framework?
+
+R: Spring boot resolve o problema de building do projeto, gerenciamento de dependencias, não é preciso criar um projeto do zero
+instalando maven ou o tomcat, pois ele ja vem embarcado, em relação a gerenciamento de dependencias, o spring utilizado
+os gerenciadores maven ou gradle, você pode escolher, o spring boot também pode ser adicionados mais projetos spring
+alguns vem embarcados como o spring boot starter teste, starter, alem de dar suporte para adicionar outros projetos do spring
+como spring cloud, spring security, spring data, spring web
+
+Quais são os benefícios e recursos que Spring Boot fornece?
+
+R: O spring boot vem com algumas coisas para fazer a inicialização, sem precisar de ser instaladas, como o tomcat e o gerenciador
+de dependencias escolhido, como o maven ou gradle, também é possivel fazer a configuração do sgbd ou trocar de sgbd sem precisar
+modificar a estrutura do projeto, temos também um arquivo chamado application.properties, que pode ser feito a troca das
+propriedades do projeto, como path, porta, configurações do banco de dados e etc.
+
+Como é feita a adição de novas dependências (JPA, Hibernate, etc…) ?
+
+R: Contamos com os projetos Spring data que é uma interface contendo alguns métodos de crud, esses métodos é composto por jpa,
+a adição das dependencias é feita ou pelo gradle que é no arquivo build.gradle ou é no maven no arquivo pom.xml.
+
+Na sua opinião, qual é a melhor IDE para trabalhar com o Spring Boot: Spring Tools Suites, IntelliJ IDEA, Eclipse ou NetBeans ?
+
+Atualmente eu uso intellij pois é um IDE praticamente especializada pra java e spring pois conta com suporte de banco de dados,
+é possivel visualizar o esquema ORM(Mapeamente objeto relacional) pelas classes mapeadas, é possivel testar algumas Querys que
+são desenvolvidas na interface repository, o intellij também é possivel baixar as dependencias e atualizalas no projeto facilmente 
+e muitas coisas a mais.
+
+O que é Spring Initializr?
+
+é um projeto do Spring para criar o projeto por uma interface de uma forma mais facil
