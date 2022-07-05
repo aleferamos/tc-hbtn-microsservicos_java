@@ -12,18 +12,18 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("products")
+@RequestMapping("/products")
 public class ProductController {
     @Autowired
     private ProductRepository productRepository;
 
-    @GetMapping("welcome")
+    @GetMapping("/welcome")
     @ApiOperation(value = "Responsável por retornar uma mensagem de boas vindas")
     public ResponseEntity<String> mensagemBoasVindas(){
         return ResponseEntity.ok().body("BEM VINDO À PRODUCT REST API.");
     }
 
-    @PostMapping("addProduct")
+    @PostMapping("/addProduct")
     @ApiResponses(value = {
             @ApiResponse(code = 10, message = "Required fields not informed.")
     })
@@ -33,7 +33,7 @@ public class ProductController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("allProducts")
+    @GetMapping("/allProducts")
     @ApiResponses(value = {
             @ApiResponse(code = 11, message = "Warning - the process returned more than 1000 products.")
     })
@@ -42,7 +42,7 @@ public class ProductController {
         return ResponseEntity.ok().body(productRepository.getAllProducts());
     }
 
-    @GetMapping("findProductById/{id}")
+    @GetMapping("/findProductById/{id}")
     @ApiResponses(value = {
             @ApiResponse(code = 12, message = "The field id not informed. This information is required.")
     })
@@ -51,7 +51,7 @@ public class ProductController {
         return ResponseEntity.ok().body(productRepository.getProductById(Math.toIntExact(id)));
     }
 
-    @DeleteMapping("removeProduct")
+    @DeleteMapping("/removeProduct")
     @ApiResponses(value = {
             @ApiResponse(code = 13, message = "User not allowed to remove a product from this category.")
     })
@@ -61,7 +61,7 @@ public class ProductController {
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping("updateProduct")
+    @PutMapping("/updateProduct")
     @ApiResponses(value = {
             @ApiResponse(code = 14, message = "No information has been updated. The new information is the same as recorded in the database.")
     })
