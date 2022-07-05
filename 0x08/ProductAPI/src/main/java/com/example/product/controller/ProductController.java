@@ -18,7 +18,7 @@ public class ProductController {
     private ProductRepository productRepository;
 
     @GetMapping("/welcome")
-    @ApiOperation(value = "Responsável por retornar uma mensagem de boas vindas")
+    @ApiOperation(value = "Responsável por retornar uma mensagem de boas vindas.")
     public ResponseEntity<String> mensagemBoasVindas(){
         return ResponseEntity.ok().body("BEM VINDO À PRODUCT REST API.");
     }
@@ -27,7 +27,7 @@ public class ProductController {
     @ApiResponses(value = {
             @ApiResponse(code = 10, message = "Required fields not informed.")
     })
-    @ApiOperation(value = "Responsável por adicionar um produto")
+    @ApiOperation(value = "Responsável por adicionar um produto.")
     public ResponseEntity<?> addProduct(@RequestBody Product product){
         productRepository.addProduct(product);
         return ResponseEntity.noContent().build();
@@ -37,7 +37,7 @@ public class ProductController {
     @ApiResponses(value = {
             @ApiResponse(code = 11, message = "Warning - the process returned more than 1000 products.")
     })
-    @ApiOperation(value = "Responsável por retornar uma lista de produtos")
+    @ApiOperation(value = "Responsável por retornar uma lista de produtos.")
     public ResponseEntity<List<Product>> getAllProducts(){
         return ResponseEntity.ok().body(productRepository.getAllProducts());
     }
@@ -46,7 +46,7 @@ public class ProductController {
     @ApiResponses(value = {
             @ApiResponse(code = 12, message = "The field id not informed. This information is required.")
     })
-    @ApiOperation(value = "Responsável por retornar um produto pelo id")
+    @ApiOperation(value = "Responsável por retornar um produto pelo id.")
     public ResponseEntity<Product> findProdutoById(@PathVariable(name = "id") Long id){
         return ResponseEntity.ok().body(productRepository.getProductById(Math.toIntExact(id)));
     }
@@ -55,7 +55,7 @@ public class ProductController {
     @ApiResponses(value = {
             @ApiResponse(code = 13, message = "User not allowed to remove a product from this category.")
     })
-    @ApiOperation(value = "Responsável por remover um produto")
+    @ApiOperation(value = "Responsável por remover um produto.")
     public ResponseEntity<?> deleteProductById(@RequestBody Product product){
         productRepository.removeProduct(product);
         return ResponseEntity.noContent().build();
@@ -65,7 +65,7 @@ public class ProductController {
     @ApiResponses(value = {
             @ApiResponse(code = 14, message = "No information has been updated. The new information is the same as recorded in the database.")
     })
-    @ApiOperation(value = "Responsável por atualizar um produto")
+    @ApiOperation(value = "Responsável por atualizar um produto.")
     public ResponseEntity<?> updateProduct(@RequestBody Product product){
         productRepository.updateProduct(product);
         return ResponseEntity.noContent().build();
