@@ -20,7 +20,7 @@ public class ProductController {
     @GetMapping("welcome")
     @ApiOperation(value = "Responsável por retornar uma mensagem de boas vindas")
     public ResponseEntity<String> mensagemBoasVindas(){
-        return ResponseEntity.ok().body("Bem vindo a API");
+        return ResponseEntity.ok().body("BEM VINDO À PRODUCT REST API.");
     }
 
     @PostMapping("addProduct")
