@@ -61,7 +61,7 @@ public class ProductController {
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping
+    @PutMapping("updateProduct")
     @ApiResponses(value = {
             @ApiResponse(code = 14, message = "No information has been updated. The new information is the same as recorded in the database.")
     })
